@@ -13,11 +13,13 @@ Source0:	http://netenv.sourceforge.net/%{name}-%{_mainver}.tar.gz
 # Source0-md5:	0ce0f5042bbe01c80171ab4085809f97
 Patch0:		%{name}-Makefile.patch
 URL:		http://netenv.sourceforge.net
-#BuildRequires:	autoconf
-#BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+When booting your laptop netenv provides you with a simple interface
+from which you can choose the current network environment. If you are
+the first time in an environment, you can enter the basic data for
+later reuse.
 
 #%description -l pl.UTF-8
 
