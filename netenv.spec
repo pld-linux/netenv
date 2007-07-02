@@ -1,7 +1,5 @@
-
 %define		_mainver	0.94-3
 %define		_ver	%(echo %{_mainver} |tr - .)
-
 Summary:	Netenv
 Summary(pl.UTF-8):	Netenv
 Name:		netenv
@@ -28,13 +26,18 @@ later reuse.
 %patch0 -p0
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir}}
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+rm -rf $RPM_BUILD_ROOT%{_datadir}/doc/packages
 
 %clean
 rm -rf $RPM_BUILD_ROOT
