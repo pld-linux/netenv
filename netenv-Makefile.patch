@@ -27,3 +27,14 @@
  
  config:
  	@./config_netenv
+--- Makefile~	2007-07-03 00:23:45.000000000 +0200
++++ Makefile	2007-07-03 00:25:11.000000000 +0200
+@@ -4,7 +4,7 @@
+ DOC_FILES=README doc
+ 
+ trpnc: math.c
+-	cc -o trpnc math.c
++	$(CC) $(CFLAGS) -o trpnc math.c
+ package:
+ 	rm -rf netenv-$(VERSION)
+ 	mkdir netenv-$(VERSION)
