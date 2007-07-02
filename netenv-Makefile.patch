@@ -1,0 +1,29 @@
+--- Makefile	2003-10-06 19:37:08.000000000 +0200
++++ Makefile-new	2007-07-03 00:11:54.987450042 +0200
+@@ -5,7 +5,6 @@
+ 
+ trpnc: math.c
+ 	cc -o trpnc math.c
+-	strip trpnc
+ package:
+ 	rm -rf netenv-$(VERSION)
+ 	mkdir netenv-$(VERSION)
+@@ -16,12 +15,12 @@
+ 	tar zcvf netenv-$(VERSION).tar.gz $(FILES) $(DOC_FILES)
+ 
+ install:
+-	install -p -o root -g root -m 744 netenv /usr/sbin
+-	install -p -o root -g root -m 755 trpnc /usr/bin
+-	install -p -o root -g root -m 755 -d /etc/netenv
+-	install -p -o root -g root -m 755 -d /usr/share/doc/packages/netenv
+-	install -p -o root -g root -m 644 doc/*.html doc/NEWS doc/lulu* doc/*png /usr/share/doc/packages/netenv
+-	install -p -o root -g root -m 744 doc/netenv_setup* doc/edit* /usr/share/doc/packages/netenv
++	install -p netenv $(DESTDIR)/usr/sbin
++	install -p trpnc $(DESTDIR)/usr/bin
++	install -p -d $(DESTDIR)/etc/netenv
++	install -p -d $(DESTDIR)/usr/share/doc/packages/netenv
++	install -p doc/*.html doc/NEWS doc/lulu* doc/*png $(DESTDIR)/usr/share/doc/packages/netenv
++	install -p doc/netenv_setup* doc/edit* $(DESTDIR)/usr/share/doc/packages/netenv
+ 
+ config:
+ 	@./config_netenv
