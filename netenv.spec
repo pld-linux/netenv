@@ -1,7 +1,7 @@
 %define		_mainver	0.94-3
 %define		_ver	%(echo %{_mainver} |tr - .)
-Summary:	Netenv
-Summary(pl.UTF-8):	Netenv
+Summary:	Netenv - network environment chooser
+Summary(pl.UTF-8):	Netenv - narzędzie do wyboru środowiska sieciowego
 Name:		netenv
 Version:	%{_ver}
 Release:	0.1
@@ -19,7 +19,11 @@ from which you can choose the current network environment. If you are
 the first time in an environment, you can enter the basic data for
 later reuse.
 
-#%description -l pl.UTF-8
+%description -l pl.UTF-8
+Przy uruchamianiu laptopa netenv udostępnia prosty interfejs
+pozwalający wybrać aktualne środowisko sieciowe. Przy uruchamianiu po
+raz pierwszy w nowym środowisku można wprowadzić podstawowe dane do
+późniejszego ponownego wykorzystania.
 
 %prep
 %setup -q -n %{name}-%{_mainver}
