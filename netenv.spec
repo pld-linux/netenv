@@ -10,7 +10,7 @@ Group:		Applications
 Source0:	http://netenv.sourceforge.net/%{name}-%{_mainver}.tar.gz
 # Source0-md5:	0ce0f5042bbe01c80171ab4085809f97
 Patch0:		%{name}-Makefile.patch
-URL:		http://netenv.sourceforge.net
+URL:		http://netenv.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
